@@ -33,12 +33,10 @@ title('8位流水线ADC输入输出时域'); grid on;
 
 %频谱图
 figure(2);
-Vin_ac = Vin - mean(Vin); 
-Vout_ac = Vout - mean(Vout);
 n_half = floor(N_sample/2)+1;
-Vin_fft = abs(fft(Vin_ac))/N_sample; 
+Vin_fft = abs(fft(Vin))/N_sample; 
 Vin_fft = Vin_fft(1:n_half);
-Vout_fft = abs(fft(Vout_ac))/N_sample; 
+Vout_fft = abs(fft(Vout))/N_sample; 
 Vout_fft = Vout_fft(1:n_half);
 Vin_fft(2:end) = 2*Vin_fft(2:end); 
 Vout_fft(2:end) = 2*Vout_fft(2:end);
